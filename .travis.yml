@@ -22,7 +22,7 @@ after_script:
   - git config user.email "lery2580@gmail.com"
   - git add .
   - git commit -m ":construction_worker:- Build & Deploy by Travis CI"
-  - git push --force --quiet "https://${DontBuyRocks}@${GH_REF}" main:gh-pages
+  - git push --force --quiet "https://${DontBuyRocks}@${GH_REF}" main:main
 # E: Build LifeCycle
 
 # 只有指定的分支提交时才会运行脚本
