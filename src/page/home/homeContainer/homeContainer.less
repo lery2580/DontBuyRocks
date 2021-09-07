@@ -1,0 +1,121 @@
+@import url("@/styles/theme.less");
+.homeContainer {
+  h2 {
+    text-align: center;
+    font-size: 40px;
+    height: 50px;
+    line-height: 50px;
+    padding: 56px 0;
+  }
+  .partone {
+    clear: both;
+    overflow: hidden;
+    .fl {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+      padding-right: 10%;
+      font-size: 20px;
+      line-height: 40px;
+      p {
+        padding-bottom: 40px;
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+    .fr {
+      display: inline-block;
+      vertical-align: top;
+      width: 40%;
+      ul {
+        padding: 0;
+        margin: 0;
+        li {
+          float: left;
+          width: 31%;
+          height: 31%;
+          background-color: @bgColor02;
+          margin-left: 2%;
+          margin-bottom: 2%;
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+  .parttwo {
+    background-image: url(../assets/bg01.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% 100%;
+    padding: 48px 4% 32px;
+    clear: both;
+    overflow: hidden;
+    .fl {
+      float: left;
+      width: 59%;
+      strong {
+        font-size: 26px;
+        display: block;
+        font-weight: normal;
+        padding-bottom: 30px;
+      }
+      p {
+        font-size: 20px;
+        line-height: 32px;
+        max-width: 557px;
+      }
+    }
+    .fr {
+      float: right;
+      width: 20%;
+      min-width: 200px;
+      .mintNum {
+        position: relative;
+        padding-bottom: 24px;
+        .sub,
+        & .add {
+          position: absolute;
+          top: 0;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 60%;
+          background-color: #e4e5ee;
+          transition: all 0.3s ease;
+          &:hover {
+            background-color: #f6f6f8;
+          }
+        }
+        .sub {
+          background-image: url(../assets/sub.png);
+          left: 0;
+        }
+        .add {
+          background-image: url(../assets/add.png);
+          right: 0;
+        }
+        h3 {
+          height: 40px;
+          line-height: 40px;
+          font-size: 30px;
+          text-align: center;
+        }
+      }
+      .remaining {
+        font-size: 12px;
+        line-height: 15px;
+        padding-top: 16px;
+        i {
+          float: right;
+        }
+      }
+    }
+  }
+}

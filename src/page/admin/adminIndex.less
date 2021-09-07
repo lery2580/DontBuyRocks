@@ -1,0 +1,39 @@
+@import url("@/styles/theme.less");
+.adminIndex {
+  h2 {
+    font-size: 24px;
+  }
+  & > div {
+    width: 48%;
+    padding-bottom: 80px;
+    & > .titleWidget {
+      background-color: @bgColor03;
+    }
+  }
+  & > .fl {
+    float: left;
+  }
+  & > .fr {
+    float: right;
+  }
+  .btnWidget {
+    float: right;
+    font-size: 24px;
+    height: 50px;
+    line-height: 50px;
+    margin: 20px 0;
+    width: 40%;
+  }
+  .contianer {
+    max-height: 600px;
+    overflow-y: auto;
+    background-color: @bgColor03;
+    padding: 20px 40px;
+    .titleWidget {
+      width: 100%;
+      color: @themeColor;
+      background: @bgColor03;
+      border-bottom: 3px solid @themeColor;
+    }
+  }
+}
