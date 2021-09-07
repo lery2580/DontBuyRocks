@@ -1,0 +1,36 @@
+language: node_js #设置语言
+
+node_js: stable #设置语言版本
+
+cache:
+  directories:
+    - node_modules #缓存依赖
+
+# S: Build Lifecycle
+install:
+  - npm i
+
+script:
+  - npm run build
+
+#after_script前5句是把部署分支的.git文件夹保护起来，用于保留历史部署的commit日志，否则部署分支永远只有一条commit记录。
+#命令里面的变量都是在Travis CI里配置过的。
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "DontBuyRocks"
+  - git config user.email "lery2580@gmail.com"
+  - git add .
+  - git commit -m ":construction_worker:- Build & Deploy by Travis CI"
+  - git push --force --quiet "https://${DontBuyRocks}@${GH_REF}" main:gh-pages
+# E: Build LifeCycle
+
+# 只有指定的分支提交时才会运行脚本
+branches:
+  only:
+    - main
+
+env:
+  global:    
+      - GH_REF: https://github.com/lery2580/DontBuyRocks.git
+
