@@ -96,7 +96,7 @@ function HomeContainer() {
   }, [accounts]);
   return (
     <div className="homeContainer">
-      <h2>{ERC721Name} DontBuyRocks on the Fantom</h2>
+      <h2>{ERC721Name} on the Fantom</h2>
       <div className="partone">
         <div className="fl">
           <p>
