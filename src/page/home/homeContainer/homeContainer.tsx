@@ -172,7 +172,7 @@ function HomeContainer() {
                     maxDBRPurchase < mintValue
                   ) {
                     Toast.show(
-                      `每个账户最多购买${maxDBRPurchase} ${ERC721Symbol}`
+                      `Maximum purchase per account ${maxDBRPurchase} ${ERC721Symbol}`
                     );
                     return false;
                   }
@@ -181,7 +181,7 @@ function HomeContainer() {
                     Number(ERC721Price) * mintValue
                   ) {
                     Toast.show(
-                      `余额不足, 当前余额${ETHBalance}， NFT价格：${
+                      `out of balance ${ETHBalance}， NFT Price：${
                         Number(ERC721Price) / Math.pow(10, 18)
                       }`
                     );
@@ -189,7 +189,7 @@ function HomeContainer() {
                     setMintValue(Math.floor(mintValue + 1));
                   }
                 } else {
-                  Toast.show("链接钱包失败");
+                  Toast.show("failed to connect wallect");
                 }
               }}
             ></div>
@@ -198,7 +198,7 @@ function HomeContainer() {
             label="mint"
             onClick={() => {
               if (!ERC721SaleIsActive) {
-                Toast.show("合约还未开启，敬请期待！");
+                Toast.show("coming soon!");
                 return false;
               }
               mint({
