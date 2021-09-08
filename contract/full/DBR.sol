@@ -1463,7 +1463,7 @@ pragma solidity ^0.8.0;
 
 contract DBR is ERC721Enumerable, Ownable {
     using SafeMath for uint256;
-    uint256 public DBRPrice = 50000000000000000; // 0.05 ETH
+    uint256 public DBRPrice = 100000000000000000000; // 0.05 ETH
     uint256 public maxDBRPurchase = 20;
     uint256 public maxDBRs = 10000;
     uint256 public _reserved = 20;
