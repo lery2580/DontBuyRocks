@@ -181,7 +181,7 @@ function HomeContainer() {
                     Number(ERC721Price) * mintValue
                   ) {
                     Toast.show(
-                      `out of balance ${ETHBalance}， NFT Price：${
+                      `over balance ${ETHBalance}， DBR Price：${
                         Number(ERC721Price) / Math.pow(10, 18)
                       }`
                     );
