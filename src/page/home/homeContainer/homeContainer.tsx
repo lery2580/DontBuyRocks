@@ -201,6 +201,23 @@ function HomeContainer() {
                 Toast.show("coming soon!");
                 return false;
               }
+              if (maxDBRPurchase < mintValue) {
+                Toast.show(`Maximum number of purchases per account${maxDBRPurchase} ${ERC721Symbol}`);
+                return false;
+              }
+              if (
+                Number(ETHBalance) * Math.pow(10, 18) <
+                Number(ERC721Price) * mintValue
+              ) {
+                Toast.show(
+                  `Exceed balance${ETHBalance}， DBR Price：${
+                    Number(ERC721Price) / Math.pow(10, 18)
+                  }`
+                );
+                return false;
+              }
+              console.log(mintValue);
+              console.log(ERC721Price);
               mint({
                 numberOfTokens: `${mintValue}`,
                 price: `${ERC721Price}`,
