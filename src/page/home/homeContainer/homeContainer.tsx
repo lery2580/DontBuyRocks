@@ -202,7 +202,7 @@ function HomeContainer() {
                 return false;
               }
               if (maxDBRPurchase < mintValue) {
-                Toast.show(`Maximum number of purchases per account${maxDBRPurchase} ${ERC721Symbol}`);
+                Toast.show(`Maximum purchase per account ${maxDBRPurchase} ${ERC721Symbol}`);
                 return false;
               }
               if (
@@ -210,7 +210,7 @@ function HomeContainer() {
                 Number(ERC721Price) * mintValue
               ) {
                 Toast.show(
-                  `Exceed balance${ETHBalance}， DBR Price：${
+                  `Exceed balance: ${ETHBalance}， DBR Price: ${
                     Number(ERC721Price) / Math.pow(10, 18)
                   }`
                 );
