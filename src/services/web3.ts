@@ -316,7 +316,7 @@ async function ERC721_mint({
   return new Promise((resolve, reject) => {
     abi.methods
       .mintDBRs(numberOfTokens)
-      .send({ from: account, value: price })
+      .send({ from: account, value: +price * +numberOfTokens })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
