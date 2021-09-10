@@ -30,7 +30,7 @@ function HomeContainer() {
 
   const [ERC721Name, setERC721Name] = useState("");
   const [ERC721Symbol, setERC721Symbol] = useState("");
-  const [ERC721Price, setERC721Price] = useState("50000000000000000");
+  const [ERC721Price, setERC721Price] = useState("");
 
   // const [ERC721Balance, setERC721Balance] = useState<String>("");
   // const [ERC721Tokens, setERC721Tokens] = useState<{
