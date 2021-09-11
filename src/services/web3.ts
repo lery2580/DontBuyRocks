@@ -130,7 +130,7 @@ async function ERC20_transfer(
   return new Promise((resolve, reject) => {
     abi.methods
       .transfer(address, amount)
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -259,9 +259,7 @@ async function ERC721_balanceOf({
   account: string;
 }): Promise<string> {
   const abi = new window.web3.eth.Contract(ERC721_ABI, nftAddress);
-  console.log("abi: ", abi);
   const balance = await abi.methods.balanceOf(account).call();
-  console.log("balance: ", balance);
   return balance;
 }
 
@@ -316,7 +314,7 @@ async function ERC721_mint({
   return new Promise((resolve, reject) => {
     abi.methods
       .mintDBRs(numberOfTokens)
-      .send({ from: account, value: +price * +numberOfTokens })
+      .send({ from: account, value: +price * +numberOfTokens, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -331,7 +329,7 @@ async function ERC721_flipSaleState({
   return new Promise((resolve, reject) => {
     abi.methods
       .flipSaleState()
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -349,7 +347,7 @@ async function ERC721_approve({
   return new Promise((resolve, reject) => {
     abi.methods
       .approve(to, tokenId)
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -365,7 +363,7 @@ async function ERC721_disableAdmin({
   return new Promise((resolve, reject) => {
     abi.methods
       .disableAdmin(_addr)
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -381,7 +379,7 @@ async function ERC721_enableAdmin({
   return new Promise((resolve, reject) => {
     abi.methods
       .enableAdmin(_addr)
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -397,7 +395,7 @@ async function ERC721_freeze({
   return new Promise((resolve, reject) => {
     abi.methods
       .freeze(tokenId)
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -411,7 +409,7 @@ async function ERC721_freezeAll({
   return new Promise((resolve, reject) => {
     abi.methods
       .freezeAll()
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -425,7 +423,7 @@ async function ERC721_renounceOwnership({
   return new Promise((resolve, reject) => {
     abi.methods
       .renounceOwnership()
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -443,7 +441,7 @@ async function ERC721_reserveDBRs({
   return new Promise((resolve, reject) => {
     abi.methods
       .reserveDBRs(_to, _amount)
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -463,7 +461,7 @@ async function ERC721_safeTransferFrom({
   return new Promise((resolve, reject) => {
     abi.methods
       .safeTransferFrom(_to, _from, _tokenId)
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -477,7 +475,7 @@ async function ERC721_withdraw({
   return new Promise((resolve, reject) => {
     abi.methods
       .withdraw()
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -494,7 +492,7 @@ async function ERC721_transferOwnership({
   return new Promise((resolve, reject) => {
     abi.methods
       .transferOwnership(newOwner)
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -515,7 +513,7 @@ async function ERC721_transferFrom({
   return new Promise((resolve, reject) => {
     abi.methods
       .transferFrom(_to, _from, _tokenId)
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -534,7 +532,7 @@ async function ERC721_setTokenURI({
   return new Promise((resolve, reject) => {
     abi.methods
       .setTokenURI(tokenId, _tokenURI)
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -551,7 +549,7 @@ async function ERC721_setReserveAmount({
   return new Promise((resolve, reject) => {
     abi.methods
       .setReserveAmount(_value)
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -568,7 +566,7 @@ async function ERC721_setPrice({
   return new Promise((resolve, reject) => {
     abi.methods
       .setPrice(_price)
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -585,7 +583,7 @@ async function ERC721_setMaxTokenAmount({
   return new Promise((resolve, reject) => {
     abi.methods
       .setMaxTokenAmount(_value)
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -601,7 +599,7 @@ async function ERC721_setMaxPurchase({
   return new Promise((resolve, reject) => {
     abi.methods
       .setMaxPurchase(_value)
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -617,7 +615,7 @@ async function ERC721_setBaseTokenURI({
   return new Promise((resolve, reject) => {
     abi.methods
       .setBaseTokenURI(baseTokenURI_)
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -637,7 +635,7 @@ async function ERC721_setApprovalForAll({
   return new Promise((resolve, reject) => {
     abi.methods
       .setApprovalForAll(operator, approved)
-      .send({ from: account })
+      .send({ from: account, gas: 3000000 })
       .once("confirmation", (confNumber: any, receipt: any) => resolve())
       .once("error", reject);
   });
@@ -670,7 +668,6 @@ export async function approve({
   tokenId: string;
   account: string;
 }): Promise<void> {
-  console.log(111, to, tokenId, account);
   return ERC721_approve({ to, tokenId, account });
 }
 export async function disableAdmin({
@@ -898,7 +895,6 @@ export async function getERC721Balance({
   return balance;
 }
 export async function DBRPrice(): Promise<string> {
-  console.log(11);
   return ERC721_price();
 }
 
